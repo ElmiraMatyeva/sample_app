@@ -4,6 +4,12 @@
 $grayMediumLight: #eaeaea;
 $grayLight: #999;
 $grayDarker: #222;
+
+@mixin box-sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 html {
   overflow-y: scroll;
 }
@@ -95,6 +101,13 @@ footer {
 small {
   float: left;
 }
+.debug_dump {
+clear: both;
+float: center;
+width: 100%;
+margin-top: 45px;
+@include box_sizing;
+}
 
 ul {
   float: right;
@@ -105,3 +118,60 @@ ul {
 }
 }
 }
+
+aside {
+
+section {
+  padding: 10px 0;
+  border-top: 1px solid $grayLight;
+  &:first-child {
+    border: 0;
+    padding-top: 0px;
+  }
+  span {
+    display: block;
+    margin-bottom: left;
+    line-height: 1;
+  }
+  h1 {
+    font-size: 1.4em;
+    text-align: left;
+    letter-spacing: -1px;
+    margin-bottom: 3px;
+    margin-top: 0px;
+  }
+}
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px; 
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+/* forms */
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .form-group;
+  @extend .has-error;
+}
+
+
+
